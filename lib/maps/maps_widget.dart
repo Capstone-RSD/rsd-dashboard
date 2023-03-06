@@ -1,6 +1,7 @@
-import '/flutter_flow/flutter_flow_google_map.dart';
+import '/components/side_bar_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -40,53 +41,74 @@ class _MapsWidgetState extends State<MapsWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       key: scaffoldKey,
-      resizeToAvoidBottomInset: false,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: responsiveVisibility(
-        context: context,
-        tabletLandscape: false,
-        desktop: false,
-      )
-          ? AppBar(
-              backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-              automaticallyImplyLeading: false,
-              title: Text(
-                'Maps',
-                style: FlutterFlowTheme.of(context).title2,
-              ),
-              actions: [],
-              centerTitle: false,
-              elevation: 0.0,
-            )
-          : null,
-      body: SafeArea(
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Expanded(
-                child: FlutterFlowGoogleMap(
-                  controller: _model.googleMapsController,
-                  onCameraIdle: (latLng) => _model.googleMapsCenter = latLng,
-                  initialLocation: _model.googleMapsCenter ??=
-                      LatLng(13.106061, -59.613158),
-                  markerColor: GoogleMarkerColor.violet,
-                  mapType: MapType.normal,
-                  style: GoogleMapStyle.standard,
-                  initialZoom: 14.0,
-                  allowInteraction: true,
-                  allowZoom: true,
-                  showZoomControls: true,
-                  showLocation: true,
-                  showCompass: false,
-                  showMapToolbar: false,
-                  showTraffic: false,
-                  centerMapOnMarkerTap: true,
+      body: GestureDetector(
+        onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+        child: Row(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            if (responsiveVisibility(
+              context: context,
+              phone: false,
+              tablet: false,
+            ))
+              wrapWithModel(
+                model: _model.sideBarNavModel,
+                updateCallback: () => setState(() {}),
+                child: SideBarNavWidget(
+                  oneBG: FlutterFlowTheme.of(context).secondaryBackground,
+                  oneIcon: Icon(
+                    Icons.bar_chart_rounded,
+                    color: FlutterFlowTheme.of(context).primaryText,
+                  ),
+                  twoBG: FlutterFlowTheme.of(context).primaryBackground,
+                  twoIcon: Icon(
+                    Icons.school_outlined,
+                    color: FlutterFlowTheme.of(context).primaryColor,
+                  ),
+                  threeColor: FlutterFlowTheme.of(context).secondaryBackground,
+                  threeIcon: Icon(
+                    Icons.account_circle_outlined,
+                    color: FlutterFlowTheme.of(context).primaryText,
+                  ),
                 ),
               ),
-            ],
-          ),
+            Expanded(
+              child: Column(
+                mainAxisSize: MainAxisSize.max,
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  if (responsiveVisibility(
+                    context: context,
+                    tabletLandscape: false,
+                    desktop: false,
+                  ))
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 0.0),
+                      child: Container(
+                        width: double.infinity,
+                        height: 44.0,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primaryBackground,
+                          borderRadius: BorderRadius.circular(0.0),
+                        ),
+                        alignment: AlignmentDirectional(0.0, 0.0),
+                      ),
+                    ),
+                  FlutterFlowWebView(
+                    url:
+                        'https://firebasestorage.googleapis.com/v0/b/rss-client-21d3b.appspot.com/o/map-markup%2Fneo_map.html?alt=media&token=9bc5d92a-fe6a-4296-85b1-31e78d1fa606',
+                    bypass: false,
+                    width: MediaQuery.of(context).size.width * 1.0,
+                    height: MediaQuery.of(context).size.height * 1.0,
+                    verticalScroll: false,
+                    horizontalScroll: false,
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );

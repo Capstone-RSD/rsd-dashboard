@@ -20,8 +20,8 @@ export 'serialization_util.dart';
 const kTransitionInfoKey = '__transition_info__';
 
 class AppStateNotifier extends ChangeNotifier {
-  Dashboard2FirebaseUser? initialUser;
-  Dashboard2FirebaseUser? user;
+  DashboardFirebaseUser? initialUser;
+  DashboardFirebaseUser? user;
   bool showSplashImage = true;
   String? _redirectLocation;
 
@@ -46,7 +46,7 @@ class AppStateNotifier extends ChangeNotifier {
   /// to perform subsequent actions (such as navigation) afterwards.
   void updateNotifyOnAuthChange(bool notify) => notifyOnAuthChange = notify;
 
-  void update(Dashboard2FirebaseUser newUser) {
+  void update(DashboardFirebaseUser newUser) {
     initialUser ??= newUser;
     user = newUser;
     // Refresh the app on auth change unless explicitly marked otherwise.
@@ -69,13 +69,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? CoursesWidget() : SignInWidget(),
+          appStateNotifier.loggedIn ? MapsWidget() : SignInWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? CoursesWidget() : SignInWidget(),
+              appStateNotifier.loggedIn ? MapsWidget() : SignInWidget(),
           routes: [
             FFRoute(
               name: 'forgotPassword',
@@ -93,29 +93,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => SignUpWidget(),
             ),
             FFRoute(
-              name: 'homePage',
-              path: 'homePage',
-              builder: (context, params) => HomePageWidget(),
-            ),
-            FFRoute(
               name: 'profilePage',
               path: 'profilePage',
               builder: (context, params) => ProfilePageWidget(),
             ),
             FFRoute(
-              name: 'test',
-              path: 'test',
-              builder: (context, params) => TestWidget(),
-            ),
-            FFRoute(
               name: 'Maps',
-              path: 'maps',
-              builder: (context, params) => MapsWidget(),
-            ),
-            FFRoute(
-              name: 'courses',
               path: 'courses',
-              builder: (context, params) => CoursesWidget(),
+              builder: (context, params) => MapsWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ).toRoute(appStateNotifier),

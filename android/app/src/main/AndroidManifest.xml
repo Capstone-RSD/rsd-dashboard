@@ -5,7 +5,7 @@
 
 
     <application
-        android:label="Dashboard2"
+        android:label="Dashboard"
         tools:replace="android:label"
         android:icon="@mipmap/ic_launcher"
         android:requestLegacyExternalStorage="true">
@@ -45,7 +45,7 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="dashboard2" android:host="dashboard2.com" />
+                <data android:scheme="dashboard" android:host="dashboard.com" />
             </intent-filter>
 
         </activity>
@@ -55,7 +55,7 @@
         <meta-data
             android:name="flutterEmbedding"
             android:value="2" />
-        <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyDav4rXTtXLaFRvguN2kurgY5Pz29NgM3Y"/>
+
 
 
     </application>

@@ -119,7 +119,7 @@ class _SideBarNavWidgetState extends State<SideBarNavWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 4.0, 4.0),
                   child: InkWell(
                     onTap: () async {
-                      context.pushNamed('courses');
+                      context.pushNamed('Maps');
                     },
                     child: Row(
                       mainAxisSize: MainAxisSize.max,

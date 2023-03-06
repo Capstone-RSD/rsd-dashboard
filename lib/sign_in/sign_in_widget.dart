@@ -319,7 +319,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                         return;
                                       }
 
-                                      context.goNamedAuth('courses', mounted);
+                                      context.goNamedAuth('Maps', mounted);
                                     },
                                     child: Container(
                                       width: 150.0,
@@ -439,7 +439,7 @@ class _SignInWidgetState extends State<SignInWidget> {
                                         return;
                                       }
 
-                                      context.goNamedAuth('courses', mounted);
+                                      context.goNamedAuth('Maps', mounted);
                                     },
                                     text: 'Continue as Guest',
                                     options: FFButtonOptions(

@@ -1,4 +1,4 @@
-# Dashboard2
+# Dashboard
 
 A new Flutter project.
 
