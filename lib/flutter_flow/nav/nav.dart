@@ -83,11 +83,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => ForgotPasswordWidget(),
             ),
             FFRoute(
-              name: 'signIn',
-              path: 'signIn',
-              builder: (context, params) => SignInWidget(),
-            ),
-            FFRoute(
               name: 'signUp',
               path: 'signUp',
               builder: (context, params) => SignUpWidget(),
@@ -96,6 +91,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'profilePage',
               path: 'profilePage',
               builder: (context, params) => ProfilePageWidget(),
+            ),
+            FFRoute(
+              name: 'signIn',
+              path: 'signIn',
+              builder: (context, params) => SignInWidget(),
             ),
             FFRoute(
               name: 'Maps',

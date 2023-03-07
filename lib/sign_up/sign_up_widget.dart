@@ -90,9 +90,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   if (Theme.of(context).brightness ==
                                       Brightness.dark)
                                     Image.asset(
-                                      'assets/images/noCode_UI_onDark@3x.png',
+                                      'assets/images/rss_logo.png',
                                       width: 150.0,
-                                      height: 40.0,
+                                      height: 132.6,
                                       fit: BoxFit.fitWidth,
                                     ),
                                 ],
