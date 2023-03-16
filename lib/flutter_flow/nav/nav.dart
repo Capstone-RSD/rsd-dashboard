@@ -99,12 +99,17 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             ),
             FFRoute(
               name: 'Maps',
-              path: 'courses',
+              path: 'Maps',
               builder: (context, params) => MapsWidget(),
+            ),
+            FFRoute(
+              name: 'MapsCopy',
+              path: 'Maps2',
+              builder: (context, params) => MapsCopyWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
-        ).toRoute(appStateNotifier),
-      ],
+        ),
+      ].map((r) => r.toRoute(appStateNotifier)).toList(),
       urlPathStrategy: UrlPathStrategy.path,
     );
 
@@ -150,6 +155,16 @@ extension NavigationExtensions on BuildContext {
               queryParams: queryParams,
               extra: extra,
             );
+
+  void safePop() {
+    // If there is only one route on the stack, navigate to the initial
+    // page instead of popping.
+    if (GoRouter.of(this).routerDelegate.matches.length <= 1) {
+      go('/');
+    } else {
+      pop();
+    }
+  }
 }
 
 extension GoRouterExtensions on GoRouter {
@@ -276,8 +291,8 @@ class FFRoute {
               ? Container(
                   color: Colors.transparent,
                   child: Image.asset(
-                    'assets/images/istockphoto-157418325-612x612.jpg',
-                    fit: BoxFit.cover,
+                    'assets/images/rss_logo.png',
+                    fit: BoxFit.scaleDown,
                   ),
                 )
               : page;
