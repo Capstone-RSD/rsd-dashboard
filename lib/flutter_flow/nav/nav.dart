@@ -78,11 +78,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               appStateNotifier.loggedIn ? MapsWidget() : SignInWidget(),
           routes: [
             FFRoute(
-              name: 'forgotPassword',
-              path: 'forgotPassword',
-              builder: (context, params) => ForgotPasswordWidget(),
-            ),
-            FFRoute(
               name: 'signUp',
               path: 'signUp',
               builder: (context, params) => SignUpWidget(),
@@ -93,6 +88,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => ProfilePageWidget(),
             ),
             FFRoute(
+              name: 'MapsCopy',
+              path: 'Maps2',
+              builder: (context, params) => MapsCopyWidget(),
+            ),
+            FFRoute(
               name: 'signIn',
               path: 'signIn',
               builder: (context, params) => SignInWidget(),
@@ -101,11 +101,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               name: 'Maps',
               path: 'Maps',
               builder: (context, params) => MapsWidget(),
-            ),
-            FFRoute(
-              name: 'MapsCopy',
-              path: 'Maps2',
-              builder: (context, params) => MapsCopyWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -176,6 +171,7 @@ extension GoRouterExtensions on GoRouter {
           : appState.updateNotifyOnAuthChange(false);
   bool shouldRedirect(bool ignoreRedirect) =>
       !ignoreRedirect && appState.hasRedirect();
+  void clearRedirectLocation() => appState.clearRedirectLocation();
   void setRedirectLocationIfUnset(String location) =>
       (routerDelegate.refreshListenable as AppStateNotifier)
           .updateNotifyOnAuthChange(false);

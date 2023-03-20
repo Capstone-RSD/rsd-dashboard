@@ -131,48 +131,6 @@ class _SideBarNavWidgetState extends State<SideBarNavWidget> {
                 ),
               ),
             ),
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-              child: InkWell(
-                onTap: () async {
-                  context.pushNamed(
-                    'profilePage',
-                    extra: <String, dynamic>{
-                      kTransitionInfoKey: TransitionInfo(
-                        hasTransition: true,
-                        transitionType: PageTransitionType.fade,
-                        duration: Duration(milliseconds: 0),
-                      ),
-                    },
-                  );
-                },
-                child: Container(
-                  width: double.infinity,
-                  height: 48.0,
-                  decoration: BoxDecoration(
-                    color: widget.threeColor,
-                    borderRadius: BorderRadius.circular(12.0),
-                  ),
-                  child: Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(8.0, 4.0, 4.0, 4.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 12.0, 0.0),
-                          child: widget.threeIcon!,
-                        ),
-                        Text(
-                          'Profile',
-                          style: FlutterFlowTheme.of(context).bodyText1,
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-            ),
           ],
         ),
       ),
