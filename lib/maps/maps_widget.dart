@@ -65,7 +65,7 @@ class _MapsWidgetState extends State<MapsWidget> {
                   twoBG: FlutterFlowTheme.of(context).primaryBackground,
                   twoIcon: Icon(
                     Icons.school_outlined,
-                    color: FlutterFlowTheme.of(context).primaryColor,
+                    color: FlutterFlowTheme.of(context).primary,
                   ),
                   threeColor: FlutterFlowTheme.of(context).secondaryBackground,
                   threeIcon: Icon(
@@ -98,7 +98,7 @@ class _MapsWidgetState extends State<MapsWidget> {
                     ),
                   FlutterFlowWebView(
                     url:
-                        'https://firebasestorage.googleapis.com/v0/b/rss-client-21d3b.appspot.com/o/map-markup%2Fneo_map.html?alt=media&token=9bc5d92a-fe6a-4296-85b1-31e78d1fa606',
+                        'https://firebasestorage.googleapis.com/v0/b/rss-client-21d3b.appspot.com/o/map-markup%2Fneo_map.html?alt=media&token=63046378-8cb1-45bc-a2d4-f8b6c74309f2',
                     bypass: false,
                     width: MediaQuery.of(context).size.width * 1.0,
                     height: MediaQuery.of(context).size.height * 1.0,

@@ -110,7 +110,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                   threeColor: FlutterFlowTheme.of(context).primaryBackground,
                   threeIcon: Icon(
                     Icons.account_circle_outlined,
-                    color: FlutterFlowTheme.of(context).primaryColor,
+                    color: FlutterFlowTheme.of(context).primary,
                   ),
                 ),
               ),
@@ -166,7 +166,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                     16.0, 16.0, 0.0, 0.0),
                                 child: Text(
                                   'Account',
-                                  style: FlutterFlowTheme.of(context).subtitle2,
+                                  style:
+                                      FlutterFlowTheme.of(context).titleSmall,
                                 ),
                               ),
                               Padding(
@@ -232,7 +233,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                   'Switch to Dark Mode',
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyText2,
+                                                      .bodySmall,
                                                 ),
                                                 Container(
                                                   width: 80.0,
@@ -370,7 +371,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                                   'Switch to Light Mode',
                                                   style: FlutterFlowTheme.of(
                                                           context)
-                                                      .bodyText2,
+                                                      .bodySmall,
                                                 ),
                                                 Container(
                                                   width: 80.0,
@@ -498,7 +499,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                           child: Text(
                                             'Country',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyText2,
+                                                .bodySmall,
                                           ),
                                         ),
                                         Expanded(
@@ -562,7 +563,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                           child: Text(
                                             'Edit Profile',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyText2,
+                                                .bodySmall,
                                           ),
                                         ),
                                         Expanded(
@@ -588,7 +589,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                     16.0, 16.0, 0.0, 0.0),
                                 child: Text(
                                   'General',
-                                  style: FlutterFlowTheme.of(context).subtitle2,
+                                  style:
+                                      FlutterFlowTheme.of(context).titleSmall,
                                 ),
                               ),
                               Padding(
@@ -634,7 +636,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                           child: Text(
                                             'Support',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyText2,
+                                                .bodySmall,
                                           ),
                                         ),
                                         Expanded(
@@ -698,7 +700,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                           child: Text(
                                             'Terms of Service',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyText2,
+                                                .bodySmall,
                                           ),
                                         ),
                                         Expanded(
@@ -762,7 +764,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget>
                                           child: Text(
                                             'Invite Friends',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodyText2,
+                                                .bodySmall,
                                           ),
                                         ),
                                         Expanded(

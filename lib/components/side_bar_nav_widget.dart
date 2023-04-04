@@ -86,7 +86,7 @@ class _SideBarNavWidgetState extends State<SideBarNavWidget> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Image.asset(
-                    'assets/images/rss_logo.png',
+                    'assets/images/black_whitebackground-01.jpg',
                     width: 130.0,
                     height: 140.0,
                     fit: BoxFit.fitWidth,
@@ -96,7 +96,7 @@ class _SideBarNavWidgetState extends State<SideBarNavWidget> {
             ),
             Text(
               'Menu',
-              style: FlutterFlowTheme.of(context).bodyText2,
+              style: FlutterFlowTheme.of(context).bodySmall,
             ),
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
@@ -123,7 +123,7 @@ class _SideBarNavWidgetState extends State<SideBarNavWidget> {
                         ),
                         Text(
                           'Dashboard',
-                          style: FlutterFlowTheme.of(context).bodyText1,
+                          style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ],
                     ),

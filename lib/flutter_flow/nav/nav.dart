@@ -69,13 +69,13 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
       errorBuilder: (context, _) =>
-          appStateNotifier.loggedIn ? MapsWidget() : SignInWidget(),
+          appStateNotifier.loggedIn ? MapsCopyWidget() : MapsWidget(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
-              appStateNotifier.loggedIn ? MapsWidget() : SignInWidget(),
+              appStateNotifier.loggedIn ? MapsCopyWidget() : MapsWidget(),
           routes: [
             FFRoute(
               name: 'signUp',
@@ -83,24 +83,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
               builder: (context, params) => SignUpWidget(),
             ),
             FFRoute(
-              name: 'profilePage',
-              path: 'profilePage',
-              builder: (context, params) => ProfilePageWidget(),
-            ),
-            FFRoute(
               name: 'MapsCopy',
               path: 'Maps2',
               builder: (context, params) => MapsCopyWidget(),
             ),
             FFRoute(
-              name: 'signIn',
-              path: 'signIn',
-              builder: (context, params) => SignInWidget(),
+              name: 'profilePage',
+              path: 'profilePage',
+              builder: (context, params) => ProfilePageWidget(),
             ),
             FFRoute(
               name: 'Maps',
               path: 'Maps',
               builder: (context, params) => MapsWidget(),
+            ),
+            FFRoute(
+              name: 'signIn',
+              path: 'signIn',
+              builder: (context, params) => SignInWidget(),
             )
           ].map((r) => r.toRoute(appStateNotifier)).toList(),
         ),
@@ -271,7 +271,7 @@ class FFRoute {
 
           if (requireAuth && !appStateNotifier.loggedIn) {
             appStateNotifier.setRedirectLocationIfUnset(state.location);
-            return '/signIn';
+            return '/Maps';
           }
           return null;
         },
@@ -285,10 +285,10 @@ class FFRoute {
               : builder(context, ffParams);
           final child = appStateNotifier.loading
               ? Container(
-                  color: Colors.transparent,
+                  color: FlutterFlowTheme.of(context).primaryBtnText,
                   child: Image.asset(
-                    'assets/images/rss_logo.png',
-                    fit: BoxFit.scaleDown,
+                    'assets/images/black_whitebackground-01.jpg',
+                    fit: BoxFit.fitWidth,
                   ),
                 )
               : page;

@@ -82,7 +82,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   if (Theme.of(context).brightness ==
                                       Brightness.light)
                                     Image.asset(
-                                      'assets/images/rss_logo.png',
+                                      'assets/images/black_transparent.png',
                                       width: 150.0,
                                       height: 156.0,
                                       fit: BoxFit.fitWidth,
@@ -90,9 +90,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   if (Theme.of(context).brightness ==
                                       Brightness.dark)
                                     Image.asset(
-                                      'assets/images/rss_logo.png',
+                                      'assets/images/white_transparent.png',
                                       width: 150.0,
-                                      height: 132.6,
+                                      height: 133.0,
                                       fit: BoxFit.fitWidth,
                                     ),
                                 ],
@@ -100,14 +100,14 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             ),
                             Text(
                               'Get Started',
-                              style: FlutterFlowTheme.of(context).title1,
+                              style: FlutterFlowTheme.of(context).displaySmall,
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 4.0, 0.0, 0.0),
                               child: Text(
                                 'Create an account by using the form below.',
-                                style: FlutterFlowTheme.of(context).bodyText2,
+                                style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                             ),
                             Padding(
@@ -129,11 +129,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                           labelText: 'Email Address',
                                           labelStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyText2,
+                                                  .bodySmall,
                                           hintText: 'Enter your email here...',
                                           hintStyle:
                                               FlutterFlowTheme.of(context)
-                                                  .bodyText2,
+                                                  .bodySmall,
                                           enabledBorder: OutlineInputBorder(
                                             borderSide: BorderSide(
                                               color:
@@ -178,7 +178,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                   16.0, 24.0, 0.0, 24.0),
                                         ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1,
+                                            .bodyMedium,
                                         validator: _model
                                             .emailAddressControllerValidator
                                             .asValidator(context),
@@ -202,10 +202,10 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       decoration: InputDecoration(
                                         labelText: 'Password',
                                         labelStyle: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                         hintText: 'Enter your email here...',
                                         hintStyle: FlutterFlowTheme.of(context)
-                                            .bodyText2,
+                                            .bodySmall,
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
@@ -226,7 +226,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
+                                                .primary,
                                             width: 2.0,
                                           ),
                                           borderRadius:
@@ -235,7 +235,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
                                             color: FlutterFlowTheme.of(context)
-                                                .primaryColor,
+                                                .primary,
                                             width: 2.0,
                                           ),
                                           borderRadius:
@@ -265,7 +265,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         ),
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyText1,
+                                          .bodyMedium,
                                       validator: _model
                                           .passwordControllerValidator
                                           .asValidator(context),
@@ -300,7 +300,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       width: 150.0,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
-                                            .primaryColor,
+                                            .primary,
                                         boxShadow: [
                                           BoxShadow(
                                             blurRadius: 0.0,
@@ -319,20 +319,19 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         child: Text(
                                           'Sign Up',
                                           style: FlutterFlowTheme.of(context)
-                                              .title3
+                                              .headlineSmall
                                               .override(
                                                 fontFamily:
                                                     FlutterFlowTheme.of(context)
-                                                        .title3Family,
+                                                        .headlineSmallFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primaryBtnText,
-                                                useGoogleFonts:
-                                                    GoogleFonts.asMap()
-                                                        .containsKey(
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .title3Family),
+                                                useGoogleFonts: GoogleFonts
+                                                        .asMap()
+                                                    .containsKey(FlutterFlowTheme
+                                                            .of(context)
+                                                        .headlineSmallFamily),
                                               ),
                                         ),
                                       ),
@@ -358,7 +357,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       child: Text(
                                         'Already have an account?',
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyText1,
+                                            .bodyMedium,
                                       ),
                                     ),
                                     Padding(
@@ -367,20 +366,20 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       child: Text(
                                         'Login',
                                         style: FlutterFlowTheme.of(context)
-                                            .subtitle2
+                                            .titleSmall
                                             .override(
                                               fontFamily:
                                                   FlutterFlowTheme.of(context)
-                                                      .subtitle2Family,
+                                                      .titleSmallFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .tertiaryColor,
-                                              useGoogleFonts:
-                                                  GoogleFonts.asMap()
-                                                      .containsKey(
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .subtitle2Family),
+                                                      .tertiary,
+                                              useGoogleFonts: GoogleFonts
+                                                      .asMap()
+                                                  .containsKey(
+                                                      FlutterFlowTheme.of(
+                                                              context)
+                                                          .titleSmallFamily),
                                             ),
                                       ),
                                     ),
@@ -404,7 +403,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                         return;
                                       }
 
-                                      context.goNamedAuth('Maps', mounted);
+                                      context.goNamedAuth('MapsCopy', mounted);
                                     },
                                     text: 'Continue as Guest',
                                     options: FFButtonOptions(
@@ -418,7 +417,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                       color: FlutterFlowTheme.of(context)
                                           .lineColor,
                                       textStyle: FlutterFlowTheme.of(context)
-                                          .subtitle1,
+                                          .titleMedium,
                                       elevation: 0.0,
                                       borderSide: BorderSide(
                                         color: Colors.transparent,
